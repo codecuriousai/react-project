@@ -4,6 +4,7 @@ import classes from './Home.module.css'
 import CarouselComponent from '../../Components/carousel/CarouselComponent';
 
 const Home = () => {
+  console.log('Home component')
   return (
     <div className={classes.container}>
       <Navbar />

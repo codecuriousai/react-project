@@ -9,6 +9,7 @@ import { UserContext } from '../../context/UserDetailsContext';
 type loginUserProps = { userLoggedIn: (userDetail: UserDetails, navigate: (path: string) => void) => void }
 
 const Login: React.FC<loginUserProps> = ({ userLoggedIn }) => {
+     console.log('Login component')
     const { userDetails, setUserDetails } = useContext(UserContext)
     const navigate = useNavigate();
 
