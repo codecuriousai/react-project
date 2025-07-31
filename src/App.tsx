@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import ViewProduct from './Pages/Products/ViewProduct/ViewProduct';
 import { UserContext, UserDetailsContext } from './context/UserDetailsContext';
 import { UserDetails } from './types/User';
+import Blog from './Pages/Blog/Blog';
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -63,6 +64,10 @@ function App() {
         {
           path: 'editProduct/:id',
           element: <CreateProduct />
+        },
+        {
+          path: 'blog',
+          element: <Blog />
         }
       ]
     },
