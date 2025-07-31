@@ -1,0 +1,40 @@
+.checkoutContainer {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.cartList {
+  margin-bottom: 20px;
+}
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.productName {
+  font-weight: 500;
+}
+.productPrice {
+  color: #2d7d46;
+}
+.total {
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+.payBtn {
+  background: #2d7d46;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+.payBtn:hover {
+  background: #226233;
+}
