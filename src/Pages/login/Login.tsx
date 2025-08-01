@@ -17,7 +17,6 @@ const Login: React.FC<loginUserProps> = ({ userLoggedIn }) => {
     useEffect(() => {
         setCount(count + 1);
     }, [count]);
-    console.log('Login component', count);
     const { userDetails, setUserDetails } = useContext(UserContext)
     const navigate = useNavigate();
 
@@ -28,7 +27,7 @@ const Login: React.FC<loginUserProps> = ({ userLoggedIn }) => {
 
     const formSubmit = (values: any, { setSubmitting }: any) => {
         if (values.email && values.password) {
-            alert('Logged in with token: ' + crypto.randomUUID());
+            alert('Login successful');
             userLoggedIn({ email: values.email, token: '12345' }, navigate);
             axios.get(`/api/login?email=${values.email}&password=${values.password}`)
                 .then(res => {
@@ -70,6 +69,5 @@ const Login: React.FC<loginUserProps> = ({ userLoggedIn }) => {
     )
 }
 
-// @ts-ignore
-window.Login = Login;
+
 export default Login;
