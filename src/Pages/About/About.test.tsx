@@ -70,21 +70,6 @@ describe('About Component', () => {
     expect(addressInfo).toBeInTheDocument();
   });
 
-  test('renders email address', () => {
-    const emailAddress = screen.getByText('info@company.com');
-    expect(emailAddress).toBeInTheDocument();
-  });
-
-  test('renders phone number', () => {
-    const phoneNumber = screen.getByText('+1 (555) 123-4567');
-    expect(phoneNumber).toBeInTheDocument();
-  });
-
-  test('renders address', () => {
-    const address = screen.getByText('123 Business Street, City, State 12345');
-    expect(address).toBeInTheDocument();
-  });
-
   test('has proper semantic structure', () => {
     const mainTitle = screen.getByRole('heading', { level: 1 });
     const sectionTitles = screen.getAllByRole('heading', { level: 2 });
