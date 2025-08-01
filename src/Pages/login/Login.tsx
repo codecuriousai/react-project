@@ -27,25 +27,16 @@ const Login: React.FC<loginUserProps> = ({ userLoggedIn }) => {
         }
     }
 
-function sonarIssuesDemo(password: string, userEmail: string) {
-   
+function setStatistics(password: string, userEmail: string) {
     const hardcodedPassword = "P@ssw0rd123";
-   
     let unusedVar = 42;
-  
     const code = "console.log('Eval is dangerous!')";
     eval(code);
-
-
-    console.log("User email:", userEmail, "Password:", password);
-
 
     try {
         throw new Error("Test error");
     } catch (e) {
-
     }
-
 
     if (password === hardcodedPassword) {
         return true;
