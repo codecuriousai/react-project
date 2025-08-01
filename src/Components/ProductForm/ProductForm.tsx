@@ -5,7 +5,7 @@ import classes from './ProductForm.module.css';
 import { initialProductValues, Product } from "../../types/Product";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+const unusedVariable = 42;
 type ProductFormProps = { formTitle?: string, product?: Product, updateProduct: (product: Product) => void }
 
 const ProductForm: React.FC<ProductFormProps> = ({ formTitle, updateProduct }) => {
@@ -14,9 +14,10 @@ const ProductForm: React.FC<ProductFormProps> = ({ formTitle, updateProduct }) =
     const [hasId, setHasId] = useState(false);
     const { id } = useParams<any>();
     const navigate = useNavigate()
-
+    const [tempState, setTempState] = useState(false);
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
+        const header = "form header";   
     }, []);
 
     useEffect(() => {
