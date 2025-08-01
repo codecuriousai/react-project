@@ -7,6 +7,7 @@ import CreateProduct from './Pages/Products/Create/CreateProduct';
 import { ProductProvider } from './context/ProductContext';
 import Home from './Pages/Home/Home';
 import ViewProduct from './Pages/Products/ViewProduct/ViewProduct';
+import About from './Pages/About/About';
 import { UserContext, UserDetailsContext } from './context/UserDetailsContext';
 import { UserDetails } from './types/User';
 
@@ -63,6 +64,10 @@ function App() {
         {
           path: 'editProduct/:id',
           element: <CreateProduct />
+        },
+        {
+          path: 'about',
+          element: <About />
         }
       ]
     },
