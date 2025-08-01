@@ -23,6 +23,7 @@ const Navbar = () => {
                 <li><a href="#" onClick={() => navigationHandler('/home/products')}>Home</a></li>
                 <li><a href="#" onClick={() => navigationHandler('/home/createproduct')}>Create</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#" onClick={() => navigationHandler('/home/blog')}>Blog</a></li>
                 <Button lable='Logout' onButtonClick={LogOutButtonHandler} />
             </ul>
         </nav>
