@@ -20,7 +20,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ formTitle, updateProduct }) =
     }, []);
 
     useEffect(() => {
-        const currentProduct = products.filter((eachProduct:Product )=> eachProduct.id.toString() == id);
+        const currentProduct = products.find((eachProduct: Product) => eachProduct.id.toString() === id);
         setProductData(currentProduct[0])
         setHasId(!!id); // Set hasId to true if id exists, otherwise false
     }, [id])
