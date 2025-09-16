@@ -7,10 +7,14 @@ import { UserContext } from '../../context/UserDetailsContext';
 const Navbar = () => {
     const { userDetails, setUserDetails } = useContext(UserContext)
     const navigate = useNavigate();
-    const LogOutButtonHandler = () => {
-        localStorage.removeItem('userLoggedIn');
-        setUserDetails({ email: '', token: '' })
-        navigate('/login')
+    const logOutButtonHandler = () => {
+        try {
+            localStorage.removeItem('userLoggedIn');
+            setUserDetails({ email: '', token: '' });
+            navigate('/login');
+        } catch (error) {
+            console.error('Logout failed', error);
+        }
     }
 
     const navigationHandler = (path: string) => {
@@ -20,10 +24,10 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <ul className="navbar-links">
-                <li><a href="#" onClick={() => navigationHandler('/home/products')}>Home</a></li>
-                <li><a href="#" onClick={() => navigationHandler('/home/createproduct')}>Create</a></li>
+                <li><a href="/home/products" onClick={(e) => { e.preventDefault(); navigationHandler('/home/products'); }}>Home</a></li>
+                <li><a href="/home/createproduct" onClick={(e) => { e.preventDefault(); navigationHandler('/home/createproduct'); }}>Create</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <Button lable='Logout' onButtonClick={LogOutButtonHandler} />
+                <Button lable='Logout' onButtonClick={logOutButtonHandler} />
             </ul>
         </nav>
     );
