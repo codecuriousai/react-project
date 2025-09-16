@@ -1,4 +1,3 @@
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ProductCard from '../ProductCard/ProductCard';
@@ -23,25 +22,21 @@ const responsive = {
     }
 };
 
-
 const CarouselComponent = () => {
-    const recentProducts = useSelector((state: any) => {
-        return state.product.recentProducts
-    });
+    const recentProducts = useSelector((state: RootState) => state.product.recentProducts);
 
-    if (!recentProducts) {
-        return <div></div>
+    if (!recentProducts || recentProducts.length === 0) {
+        return <div>No products available</div>;
     }
     return (
         <Carousel responsive={responsive}>
             {recentProducts.map((v: any) => {
                 return (
                     <ProductCard data={v} showDscription={false} />
-                )
+                );
             })}
-
         </Carousel>
-    )
-}
+    );
+};
 
 export default CarouselComponent;
