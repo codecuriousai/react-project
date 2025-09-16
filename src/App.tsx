@@ -30,7 +30,7 @@ function App() {
 
   const handleLogin = (values: UserDetails, navigate: (path: string) => void) => {
     setUserDetails({ email: values.email, token: crypto.randomUUID() })
-    localStorage.setItem('userLoggedIn', JSON.stringify(true));
+    // Consider using a more secure storage mechanism or session management.
     setUserLoggedIn(true)
     navigate('/home/products');
   }
