@@ -20,7 +20,7 @@ function App() {
   const { userDetails, setUserDetails } = useContext(UserContext)
 
   useEffect(() => {
-    const token = localStorage.getItem('userLoggedIn');
+    const token = localStorage.getItem('userLoggedIn') || 'false';
     if (token === 'true') {
       setUserLoggedIn(true)
     } else {
@@ -30,7 +30,7 @@ function App() {
 
   const handleLogin = (values: UserDetails, navigate: (path: string) => void) => {
     setUserDetails({ email: values.email, token: crypto.randomUUID() })
-    localStorage.setItem('userLoggedIn', JSON.stringify(true));
+    localStorage.setItem('userLoggedIn', 'true');
     setUserLoggedIn(true)
     navigate('/home/products');
   }
